@@ -1,0 +1,150 @@
+@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/theme.css");
+@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/indicators.css");
+@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/progress_bar.css");
+
+:root {
+	/* --- Netflix base palette --- */
+	--nf-bg: 20, 20, 20;
+	/* #141414 */
+	--nf-bg2: 0, 0, 0;
+	/* true black */
+	--nf-text: 255, 255, 255;
+	/* #fff */
+	--nf-muted: 181, 181, 181;
+	/* #b5b5b5 */
+	--nf-border: 45, 45, 45;
+	/* subtle dividers */
+	--nf-red: 229, 9, 20;
+	/* #E50914 */
+
+	/* --- Jellyfish variables expected by theme.css --- */
+	--primary-r: 229;
+	--primary-g: 9;
+	--primary-b: 20;
+
+	--primary-accent-color: rgb(var(--nf-red));
+	--secondary-accent-color: rgba(var(--nf-red), 0.18);
+	--alt-accent-color: rgba(var(--nf-text), 0.10);
+
+	--primary-background-color: rgb(var(--nf-bg));
+	--primary-background-transparent: rgba(var(--nf-bg), 0.55);
+
+	/* “glass” surfaces used all over theme.css */
+	--secondary-background-color: rgba(var(--nf-bg), 0.92);
+	--secondary-background-transparent: rgba(var(--nf-bg), 0.78);
+
+	--text-color: rgb(var(--nf-text));
+	--secondary-text-color: rgb(var(--nf-muted));
+
+	/* background color for header floaters */
+	--header-background-color: var(--nf-text);
+
+	/* Reduce the “glassmorphism” intensity to feel more Netflix */
+	--blur: 6px;
+
+	--logo: url("https://cdn.discordapp.com/attachments/790610541143261205/1469540376770777150/30a7ed0fb89cfba725eab31a3c020b5e.png?ex=698807a0&is=6986b620&hm=74a8ba7a904896124e007ca9aebfb8e8f8e14aa74a3e4ab33cbc6d16b11e3fee&");
+}
+
+/* --- Netflix-correct overrides for Jellyfish defaults --- */
+
+/* Section titles should be WHITE (Netflix), not accent red */
+.sectionTitle,
+.pageTitle {
+	color: var(--text-color) !important;
+}
+
+.pageTitle {
+	color: var(--text-color) !important;
+	font-weight: bold;
+}
+
+/* Keep accent for hover only (optional, Netflix-ish) */
+.navMenuOption:hover:not(.navMenuOption-selected) {
+	color: var(--primary-accent-color) !important;
+}
+
+/* Netflix cards: subtle radius and scale hover (less “bubble”) */
+.card {
+	border-radius: 6px !important;
+	box-shadow: none !important;
+	transition: transform 120ms ease, filter 120ms ease !important;
+}
+
+.card:hover {
+	transform: scale(1.06) !important;
+	filter: brightness(1.05) !important;
+	z-index: 5;
+}
+
+/* Primary CTA buttons stay red */
+.button-submit,
+.layout-desktop .mainDetailButtons .btnPlay,
+.layout-mobile .mainDetailButtons .btnPlay,
+.layout-tv .mainDetailButtons .btnPlay {
+	background: var(--primary-accent-color) !important;
+	color: var(--text-color) !important;
+}
+
+/* De-emphasize secondary surfaces (less “blue glow / glass panel”) */
+.dialog,
+.formDialogContent,
+.mainDrawer,
+.detailSectionContent {
+	background: var(--secondary-background-color) !important;
+}
+
+.headerTabs,
+/* Container for navigation tabs within the header */
+.headerRight
+
+/* Container for icons/buttons on the right of the header */
+	{
+	color: var(--nf-text) !important;
+	border: 0.5em solid var(--nf-bg2) !important;
+	backdrop-filter: none !important;
+}
+
+.emby-button-foreground
+
+/* General foreground (text/icon) for Emby buttons */
+	{
+	color: var(--secondary-text-color) !important;
+}
+
+.layout-desktop .detailPagePrimaryContent {
+	padding-left: 23.4vw !important;
+}
+
+.button-link:not(.itemDetailPage .button-link),
+.selectLabelFocused,
+.textareaLabelFocused,
+.inputLabelFocused,
+.metadataSidebarIcon,
+.upNextDialog-countdownText,
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeInherit,
+.listItemImageButton:hover,
+.button-flat:hover,
+#divRunningTasks span,
+.username,
+.headerUsername,
+.sectionTitle,
+.navMenuOption:hover:not(.navMenuOption-selected) {
+	color: var(--text-color) !important;
+}
+
+.emby-select option {
+	background-color: rgba(var(--nf-bg), 1);
+}
+
+.layout-mobile .headroom--top .headerRight {
+  color: var(--header-background-color) !important;
+}
+
+/* Hide "My Media" title and unwanted header buttons */
+.emby-tabs-slider [data-index="2"],
+.emby-tabs-slider [data-index="4"],
+.emby-tabs-slider [data-index="5"],
+.headerSyncButton,
+.section0 .sectionTitle {
+  display: none !important;
+}
