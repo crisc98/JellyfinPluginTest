@@ -20,7 +20,7 @@
   display: none !important;
 }
 
-.backgroundContainer:not(.withBackdrop) {
+.backgroundContainer:not(.withBackdrop):not(.backgroundContainer-transparent) {
   background-color: rgba(var(--dark), 1) !important;
 }
 
