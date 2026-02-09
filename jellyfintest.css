@@ -1,118 +1,97 @@
-@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/theme.css");
-@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/indicators.css");
-@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/progress_bar.css");
-
+@import url('https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/theme.css');
 :root {
-	/* --- Netflix base palette --- */
-	--nf-bg: 20, 20, 20;
-	/* #141414 */
-	--nf-bg2: 0, 0, 0;
-	/* true black */
-	--nf-text: 255, 255, 255;
-	/* #fff */
-	--nf-muted: 181, 181, 181;
-	/* #b5b5b5 */
-	--nf-border: 45, 45, 45;
-	/* subtle dividers */
-	--nf-red: 229, 9, 20;
-	/* #E50914 */
-
-	/* --- Jellyfish variables expected by theme.css --- */
-	--primary-r: 229;
-	--primary-g: 9;
-	--primary-b: 20;
-
-	--primary-accent-color: rgb(var(--nf-red));
-	--secondary-accent-color: rgba(var(--nf-red), 0.18);
-	--alt-accent-color: rgba(var(--nf-text), 0.10);
-
-	--primary-background-color: rgb(var(--nf-bg));
-	--primary-background-transparent: rgba(var(--nf-bg), 0.55);
-
-	/* “glass” surfaces used all over theme.css */
-	--secondary-background-color: rgba(var(--nf-bg), 0.92);
-	--secondary-background-transparent: rgba(var(--nf-bg), 0.78);
-
-	--text-color: rgb(var(--nf-text));
-	--secondary-text-color: rgb(var(--nf-muted));
-
-	/* background color for header floaters */
-	--header-background-color: var(--nf-text);
-
-	/* Reduce the “glassmorphism” intensity to feel more Netflix */
-	--blur: 6px;
-
-	--logo: url("https://cdn.discordapp.com/attachments/790610541143261205/1469540376770777150/30a7ed0fb89cfba725eab31a3c020b5e.png?ex=698807a0&is=6986b620&hm=74a8ba7a904896124e007ca9aebfb8e8f8e14aa74a3e4ab33cbc6d16b11e3fee&");
+  --accent: 6, 140, 120;         /* #FFFFFF */
+  --accent-off: 141, 141, 141;     /* #8D8D8D */
+  --dark: 20, 20, 20;              /* #202020 */
+  --darkest: 0, 0, 0;           /* #191919 */
+  --dark-highlight: 181, 181, 181;    /* #414141 */
+  --dark-apparent: 43, 43, 43;     /* #2B2B2B */
+  --text-color: 255, 255, 255;
 }
 
-/* --- Netflix-correct overrides for Jellyfish defaults --- */
-
-/* Section titles should be WHITE (Netflix), not accent red */
-.sectionTitle,
-.pageTitle {
-	color: var(--text-color) !important;
+/* Hide "My Media" title and unwanted header buttons */
+.itemExternalLinks,
+.studiosGroup,
+.emby-tabs-slider [data-index="2"],
+.emby-tabs-slider [data-index="4"],
+.emby-tabs-slider [data-index="5"],
+.headerSyncButton,
+.section0 .sectionTitle {
+  display: none !important;
 }
 
-.pageTitle {
-	color: var(--text-color) !important;
-	font-weight: bold;
+.backgroundContainer:not(.withBackdrop) {
+  background-color: rgba(var(--dark), 1) !important;
 }
 
-/* Keep accent for hover only (optional, Netflix-ish) */
-.navMenuOption:hover:not(.navMenuOption-selected) {
-	color: var(--primary-accent-color) !important;
+.backgroundContainer.withBackdrop {
+  background-color: rgba(var(--dark), 0.15) !important;
 }
 
-/* Netflix cards: subtle radius and scale hover (less “bubble”) */
-.card {
-	border-radius: 6px !important;
-	box-shadow: none !important;
-	transition: transform 120ms ease, filter 120ms ease !important;
+.layout-tv .backgroundContainer, .layout-desktop .backgroundContainer {
+  background: none;
+}
+.noBackdropTransparency .detailPagePrimaryContainer, .noBackdropTransparency .detailPageSecondaryContainer {
+  background-color: rgba(0,0,0,0) !important;
 }
 
-.card:hover {
-	transform: scale(1.06) !important;
-	filter: brightness(1.05) !important;
-	z-index: 5;
+.trackSelections > *:nth-child(n + 3) {
+  visibility: visible; 
+}
+.selectAudioContainer, .selectSubtitlesContainer {
+  position: relative;
 }
 
-/* Primary CTA buttons stay red */
-.button-submit,
-.layout-desktop .mainDetailButtons .btnPlay,
-.layout-mobile .mainDetailButtons .btnPlay,
-.layout-tv .mainDetailButtons .btnPlay {
-	background: var(--primary-accent-color) !important;
-	color: var(--text-color) !important;
+.layout-desktop h1.parentName {
+  height: 2em;
 }
 
-/* De-emphasize secondary surfaces (less “blue glow / glass panel”) */
-.dialog,
-.formDialogContent,
-.mainDrawer,
-.detailSectionContent {
-	background: var(--secondary-background-color) !important;
+.detailSectionContent .detail-clamp-text, .detailSectionContent .overview {
+  font-size: 110% !important;
+  margin-top: 0.4em;
+  margin-bottom: 0em;
 }
 
-.headerTabs,
-/* Container for navigation tabs within the header */
-.headerRight
-
-/* Container for icons/buttons on the right of the header */
-	{
-	color: var(--nf-text) !important;
-	border: 0.5em solid var(--nf-bg2) !important;
-	backdrop-filter: none !important;
+.trackSelections{
+  margin-bottom: 0.2em;
 }
 
-.emby-button-foreground
-
-/* General foreground (text/icon) for Emby buttons */
-	{
-	color: var(--secondary-text-color) !important;
+#itemDetailPage .emby-select-withcolor:not([disabled]){
+  background-color: rgba(var(--darkest), 0.2) !important;
+  padding-right: 1em !important;
 }
 
-.layout-desktop .detailPagePrimaryContent {
-	padding-left: 23.4vw !important;
+.trackSelections .selectContainer {
+  width: 500px !important;
+}
+
+.detailPagePrimaryContainer {
+  font-size: 110% !important;
+}
+
+#castCollapsible {
+  order: 1;
+}
+
+@media (min-width: 120em) {
+  .layout-desktop .overflowPortraitCard, .layout-desktop .overflowSquareCard {
+    width: 9.41vw;
+  }
+}
+
+.layout-desktop .nextUpSection {
+  margin-top: 23vh !important;
+}
+
+.detailSectionContent .detail-clamp-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden;
+}
+
+a.overview-expand.emby-button {
+  font-size: 95%;
 }
 
 .button-link:not(.itemDetailPage .button-link),
@@ -132,19 +111,51 @@
 	color: var(--text-color) !important;
 }
 
-.emby-select option {
-	background-color: rgba(var(--nf-bg), 1);
+.headerTabs,
+.headerRight
+{
+	color: var(--text-color) !important;
+	border: 0.5em solid var(--dark-apparent) !important;
+    background: var(--dark) !important;
+    border-radius: 100px !important;
+    backdrop-filter: blur(50px) !important;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
-.layout-mobile .headroom--top .headerRight {
-  color: var(--header-background-color) !important;
+.homeLibraryText, .emby-button-foreground {
+  color: rgb(var(--dark-highlight));
 }
 
-/* Hide "My Media" title and unwanted header buttons */
-.emby-tabs-slider [data-index="2"],
-.emby-tabs-slider [data-index="4"],
-.emby-tabs-slider [data-index="5"],
-.headerSyncButton,
-.section0 .sectionTitle {
-  display: none !important;
+.emby-tab-button-active > .emby-button-foreground {
+  color: rgb(var(--text-color));
+}
+
+.emby-textarea {
+    color: rgba(var(--text-color)) !important;
+}
+
+.emby-textarea:focus,
+.emby-input:focus,
+.emby-select-withcolor:focus {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: .16em solid rgba(var(--accent)) !important;
+}
+
+.emby-input, .emby-textarea, .emby-select-withcolor {
+    border: .16em solid rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.raised, .fab, a[data-role="button"] {
+    color: rgba(var(--text-color), 1) !important;
+}
+
+body, h1, h2, h3, h4, .textActionButton, .emby-button-foreground {
+    text-shadow: unset !important;
+}
+
+.raised:hover .homeLibraryText,
+.emby-tab-button:hover .emby-button-foreground {
+    color: rgb(var(--text-color)) !important;
+    transition: 100ms;
 }
