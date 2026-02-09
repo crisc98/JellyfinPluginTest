@@ -1,11 +1,11 @@
 @import url('https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/theme.css');
 :root {
-  --accent: 6, 140, 120;         /* #FFFFFF */
-  --accent-off: 141, 141, 141;     /* #8D8D8D */
-  --dark: 20, 20, 20;              /* #202020 */
-  --darkest: 0, 0, 0;           /* #191919 */
-  --dark-highlight: 181, 181, 181;    /* #414141 */
-  --dark-apparent: 43, 43, 43;     /* #2B2B2B */
+  --accent: 6, 140, 120;
+  --accent-off: 141, 141, 141;
+  --dark: 20, 20, 20; 
+  --darkest: 0, 0, 0; 
+  --dark-highlight: 181, 181, 181;
+  --dark-apparent: 43, 43, 43;
   --text-color: 255, 255, 255;
 }
 
