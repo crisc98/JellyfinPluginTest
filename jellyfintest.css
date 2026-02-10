@@ -244,7 +244,7 @@ div.card-hoverable.squareCard.card:hover {
     background-color: rgba(var(--dark), 0.4);
 }
 
-.cardOverlayButton-br {
+.layout-desktop .cardOverlayButton-br {
     display: block !important;
 }
 
