@@ -254,3 +254,38 @@ div.card-hoverable.squareCard.card:hover {
 .cardContent-shadow {
     background-color: rgba(var(--dark), 1) !important;
 }
+
+.layout-desktop .listViewUserDataButtons,
+.layout-desktop .material-icons.detailButton-icon.check,
+.layout-desktop .material-icons.detailButton-icon.favorite,
+.layout-desktop .material-icons.detailButton-icon.more_vert,
+.layout-desktop .material-icons.detailButton-icon.replay,
+.layout-desktop .material-icons.detailButton-icon.theaters {
+    display: block;
+}
+
+.layout-desktop .btnMoreCommands::after,
+.layout-desktop .btnPlay::after,
+.layout-desktop .btnPlayTrailer::after,
+.layout-desktop .btnPlaystate::after,
+.layout-desktop .btnReplay::after,
+.layout-desktop .btnUserRating::after,
+.layout-desktop .btntheaters::after {
+    content: none;
+}
+
+.layout-desktop .btnPlay {
+    margin-right: 1vw !important;
+}
+
+.layout-desktop .itemDetailPage:has([data-type="Playlist"]) .detailImageContainer .card {
+    display: block !important;
+    float: right;
+    top: 6em;
+    right: 20%;
+    left: unset;
+}
+
+.layout-desktop .itemDetailPage:has([data-type="Playlist"]) .detailImageContainer .card .cardBox {
+    display: block !important;
+}
