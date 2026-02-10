@@ -1,12 +1,14 @@
 @import url('https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/theme.css');
+
 :root {
-  --accent: 6, 140, 120;
-  --accent-off: 141, 141, 141;
-  --dark: 20, 20, 20; 
-  --darkest: 0, 0, 0; 
-  --dark-highlight: 181, 181, 181;
-  --dark-apparent: 43, 43, 43;
-  --text-color: 255, 255, 255;
+    --accent: 6, 140, 120;
+    --accent-off: 141, 141, 141;
+    --dark: 20, 20, 20;
+    --darkest: 0, 0, 0;
+    --dark-highlight: 181, 181, 181;
+    --dark-apparent: 43, 43, 43;
+    --text-color: 255, 255, 255;
+    --rounding: 0.8em;
 }
 
 /* Hide "My Media" title and unwanted header buttons */
@@ -16,82 +18,95 @@
 .emby-tabs-slider [data-index="4"],
 .emby-tabs-slider [data-index="5"],
 .headerSyncButton,
-.section0 .sectionTitle {
-  display: none !important;
+.section0 .sectionTitle,
+.section0 .cardText {
+    display: none !important;
+}
+
+.sectionTitleContainer-cards {
+    padding-top: 0%;
 }
 
 .backgroundContainer:not(.withBackdrop):not(.backgroundContainer-transparent) {
-  background-color: rgba(var(--dark), 1) !important;
+    background-color: rgba(var(--dark), 1) !important;
 }
 
 .backgroundContainer.withBackdrop {
-  background-color: rgba(var(--dark), 0.15) !important;
+    background-color: rgba(var(--dark), 0.15) !important;
 }
 
-.layout-tv .backgroundContainer, .layout-desktop .backgroundContainer {
-  background: none;
-}
-.noBackdropTransparency .detailPagePrimaryContainer, .noBackdropTransparency .detailPageSecondaryContainer {
-  background-color: rgba(0,0,0,0) !important;
+.layout-tv .backgroundContainer,
+.layout-desktop .backgroundContainer {
+    background: none;
 }
 
-.trackSelections > *:nth-child(n + 3) {
-  visibility: visible; 
+.noBackdropTransparency .detailPagePrimaryContainer,
+.noBackdropTransparency .detailPageSecondaryContainer {
+    background-color: rgba(0, 0, 0, 0) !important;
 }
-.selectAudioContainer, .selectSubtitlesContainer {
-  position: relative;
+
+.trackSelections>*:nth-child(n + 3) {
+    visibility: visible;
+}
+
+.selectAudioContainer,
+.selectSubtitlesContainer {
+    position: relative;
 }
 
 .layout-desktop h1.parentName {
-  height: 2em;
+    height: 2em;
 }
 
-.detailSectionContent .detail-clamp-text, .detailSectionContent .overview {
-  font-size: 110% !important;
-  margin-top: 0.4em;
-  margin-bottom: 0em;
+.detailSectionContent .detail-clamp-text,
+.detailSectionContent .overview {
+    font-size: 110% !important;
+    margin-top: 0.4em;
+    margin-bottom: 0em;
 }
 
-.trackSelections{
-  margin-bottom: 0.2em;
+.trackSelections {
+    margin-bottom: 0.2em;
 }
 
-#itemDetailPage .emby-select-withcolor:not([disabled]){
-  background-color: rgba(var(--darkest), 0.2) !important;
-  padding-right: 1em !important;
+#itemDetailPage .emby-select-withcolor:not([disabled]) {
+    background-color: rgba(var(--darkest), 0.2) !important;
+    padding-right: 1em !important;
 }
 
 .trackSelections .selectContainer {
-  width: 500px !important;
+    width: 500px !important;
 }
 
 .detailPagePrimaryContainer {
-  font-size: 110% !important;
+    font-size: 110% !important;
 }
 
 #castCollapsible {
-  order: 1;
+    order: 1;
 }
 
 @media (min-width: 120em) {
-  .layout-desktop .overflowPortraitCard, .layout-desktop .overflowSquareCard {
-    width: 9.41vw;
-  }
+
+    .layout-desktop .overflowPortraitCard,
+    .layout-desktop .overflowSquareCard {
+        width: 9.41vw;
+    }
 }
 
 .layout-desktop .nextUpSection {
-  margin-top: 23vh !important;
+    margin-top: 23vh !important;
 }
 
 .detailSectionContent .detail-clamp-text {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3 !important;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3 !important;
+    overflow: hidden;
 }
 
 a.overview-expand.emby-button {
-  font-size: 95%;
+    font-size: 95%;
 }
 
 .button-link:not(.itemDetailPage .button-link),
@@ -108,26 +123,26 @@ a.overview-expand.emby-button {
 .headerUsername,
 .sectionTitle,
 .navMenuOption:hover:not(.navMenuOption-selected) {
-	color: var(--text-color) !important;
+    color: var(--text-color) !important;
 }
 
 .headerTabs,
-.headerRight
-{
-	color: var(--text-color) !important;
-	border: 0.5em solid var(--dark-apparent) !important;
+.headerRight {
+    color: var(--text-color) !important;
+    border: 0.5em solid var(--dark-apparent) !important;
     background: var(--dark) !important;
     border-radius: 100px !important;
     backdrop-filter: blur(50px) !important;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
-.homeLibraryText, .emby-button-foreground {
-  color: rgb(var(--dark-highlight));
+.homeLibraryText,
+.emby-button-foreground {
+    color: rgb(var(--dark-highlight));
 }
 
-.emby-tab-button-active > .emby-button-foreground {
-  color: rgb(var(--text-color));
+.emby-tab-button-active>.emby-button-foreground {
+    color: rgb(var(--text-color));
 }
 
 .emby-textarea {
@@ -141,16 +156,26 @@ a.overview-expand.emby-button {
     border: .16em solid rgba(var(--accent)) !important;
 }
 
-.emby-input, .emby-textarea, .emby-select-withcolor {
+.emby-input,
+.emby-textarea,
+.emby-select-withcolor {
     border: .16em solid rgba(255, 255, 255, 0.1) !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.raised, .fab, a[data-role="button"] {
+.raised,
+.fab,
+a[data-role="button"] {
     color: rgba(var(--text-color), 1) !important;
 }
 
-body, h1, h2, h3, h4, .textActionButton, .emby-button-foreground {
+body,
+h1,
+h2,
+h3,
+h4,
+.textActionButton,
+.emby-button-foreground {
     text-shadow: unset !important;
 }
 
@@ -158,4 +183,74 @@ body, h1, h2, h3, h4, .textActionButton, .emby-button-foreground {
 .emby-tab-button:hover .emby-button-foreground {
     color: rgb(var(--text-color)) !important;
     transition: 100ms;
+}
+
+/* == Card Hover Effects (Outline & Dim) == */
+/* Adds an accent-colored border and a dimming overlay on hover for various card types. */
+
+.cardBox-bottompadded.cardBox>.cardScalable {
+    border: 2px solid transparent;
+    /* Reserve space for hover border */
+}
+
+div.card-withuserdata.card-hoverable.card:hover>.cardBox-bottompadded.cardBox>.cardScalable,
+div.groupedCard.card-hoverable.overflowSquareCard.card:hover>.cardBox-bottompadded.cardBox>.cardScalable,
+div.card-hoverable.squareCard.card:hover>.cardBox-bottompadded.cardBox>.cardScalable {
+    border: 2px solid rgb(var(--accent)) !important;
+    box-shadow: 0 0 3px rgba(var(--accent), .5) !important;
+    border-radius: var(--rounding);
+}
+
+/* The dimming overlay using a pseudo-element. */
+div.card-withuserdata.card-hoverable.card:hover>.cardBox-bottompadded.cardBox>.cardScalable::before,
+div.groupedCard.card-hoverable.overflowSquareCard.card:hover>.cardBox-bottompadded.cardBox>.cardScalable::before,
+div.card-hoverable.squareCard.card:hover>.cardBox-bottompadded.cardBox>.cardScalable::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(var(--dark), 0.4);
+    /* Dark semi-transparent overlay */
+    z-index: 1;
+    /* Position behind card content but above card background/image if any */
+    border-radius: var(--rounding);
+    pointer-events: none;
+}
+
+/* Ensures cards are positioned relatively for the ::before pseudo-element to work correctly. */
+div.card-withuserdata.card-hoverable.card,
+div.groupedCard.card-hoverable.overflowSquareCard.card,
+div.card-hoverable.squareCard.card {
+    position: relative;
+    transition: transform 150ms ease;
+    transform: scale(1);
+    transform-origin: center;
+}
+
+/* Hover state: only the transform changes */
+div.card-withuserdata.card-hoverable.card:hover,
+div.groupedCard.card-hoverable.overflowSquareCard.card:hover,
+div.card-hoverable.squareCard.card:hover {
+    transform: scale(1.05);
+}
+
+.cardOverlayContainer {
+    background: block !important;
+    background-color: rgba(var(--dark), 0.4);
+}
+
+.cardOverlayButton-br {
+    display: block !important;
+}
+
+.cardOverlayButton-br button[is="emby-ratingbutton"],
+.cardOverlayButton-br button[is="paper-icon-button-light"][data-action="menu"] {
+    display: none !important;
+}
+
+.cardBox:not(.visualCardBox) .cardPadder,
+.cardContent-shadow {
+    background-color: rgba(var(--dark), 1) !important;
 }
