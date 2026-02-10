@@ -68,10 +68,13 @@
 .trackSelections {
     margin-bottom: 0.2em;
 }
+.trackSelections .emby-select {
+    width: 100%;
+}
 
 #itemDetailPage .emby-select-withcolor:not([disabled]) {
     background-color: rgba(var(--darkest), 0.2) !important;
-    padding-right: 1em !important;
+    padding-right: 2em !important;
 }
 
 .trackSelections .selectContainer {
