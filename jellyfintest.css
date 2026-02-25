@@ -97,10 +97,6 @@
     }
 }
 
-.layout-desktop .nextUpSection {
-    margin-top: 23vh !important;
-}
-
 .detailSectionContent .detail-clamp-text {
     display: -webkit-box;
     -webkit-box-orient: vertical;
