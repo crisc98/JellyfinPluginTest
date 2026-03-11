@@ -298,3 +298,11 @@ div.card-hoverable.squareCard.card:hover {
 .layout-mobile .detailPagePrimaryContent {
     padding-top: 0px;
 }
+
+.detailsGroupItem.genresGroup {
+    display: none;
+}
+
+.collectionItems .collectionItemsContainer .portraitCard {
+    width: 25%
+}
