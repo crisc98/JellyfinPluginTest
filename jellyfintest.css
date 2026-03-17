@@ -306,3 +306,8 @@ div.card-hoverable.squareCard.card:hover {
 .collectionItems .collectionItemsContainer .portraitCard {
     width: 25%
 }
+
+.layout-desktop .itemDetailPage:has([data-type="Playlist"]) .listViewUserDataButtons {
+    display: flex;
+    flex-direction: row;
+}
