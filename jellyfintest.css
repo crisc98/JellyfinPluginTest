@@ -130,7 +130,7 @@ h4 {
 .layout-tv .material-icons.detailButton-icon.replay,
 .layout-tv .material-icons.detailButton-icon.theaters,
 .sectionTitleTextButton>.material-icons.chevron_right,
-button.emby-tab-button:nth-child(3) {
+button.emby-tab-button:nth-child(3):not([id^="customTabButton"]) {
     display: none
 }
 
@@ -1882,7 +1882,7 @@ a[data-role=button] {
 #loginPage .pageTitleWithDefaultLogo,
 .cardOverlayButton-br button[is=emby-ratingbutton],
 .cardOverlayButton-br button[is=paper-icon-button-light][data-action=menu],
-.emby-tabs-slider [data-index="2"],
+.emby-tabs-slider [data-index="2"]:not([id^="customTabButton"]),
 .emby-tabs-slider [data-index="4"],
 .emby-tabs-slider [data-index="5"],
 .headerSyncButton,
@@ -4029,4 +4029,3 @@ div.groupedCard.card-hoverable.overflowSquareCard.card:hover {
 .layout-mobile #loginPage {
     padding-top: 0px !important;
 }
-
